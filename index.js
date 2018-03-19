@@ -10,7 +10,7 @@ const getStaticPage = (url) => {
     }
   };
 
-	return new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     request(options)
       .then($ => {
         resolve($);
@@ -18,7 +18,7 @@ const getStaticPage = (url) => {
       .catch(error => {
         reject(error);
       });
-	});
+  });
 };
 
 module.exports = { getStaticPage };

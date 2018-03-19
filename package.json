@@ -1,9 +1,11 @@
 {
   "name": "kapti",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple crawling that returns DOM Object",
   "main": "index.js",
   "scripts": {
+    "eslint": "eslint .",
+    "prepublish": "npm run eslint && npm t",
     "test": "mocha index.test.js --timeout=10000",
     "watch:test": "mocha index.test.js -w"
   },
