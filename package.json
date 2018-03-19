@@ -1,0 +1,24 @@
+{
+  "name": "kapti",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha index.test.js --timeout=10000",
+    "watch:test": "mocha index.test.js -w"
+  },
+  "keywords": ["crawler", "simple", "dom"],
+  "author": "Luís Fernando Guedes <lfernandoguedes@gmail.com>",
+  "license": "GNU",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.19.0",
+    "mocha": "^5.0.4"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "jsdom": "^11.6.2",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  }
+}

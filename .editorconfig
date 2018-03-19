@@ -1,0 +1,25 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+
+# JavaScript indentation
+[*.{js,json,py,yml}]
+indent_style = space
+indent_size = 2
+
+# HTML
+[*.{html, css}]
+indent_style = space
+indent_size = 2
+
+# Makefile indentation
+[Makefile]
+indent_style = tab
+indent_size = 8
