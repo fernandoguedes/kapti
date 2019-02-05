@@ -1,12 +1,13 @@
 const request = require('request-promise');
-const $ = require('cheerio');
+const cheerio = require('cheerio');
+const puppeteer = require('puppeteer');
 
 const getStaticPage = (url) => {
   const options = {
     uri: url,
     headers: {},
     transform: (body) => {
-      return $.load(body);
+      return cheerio.load(body);
     }
   };
 
@@ -21,4 +22,27 @@ const getStaticPage = (url) => {
 	});
 };
 
-module.exports = { getStaticPage };
+const getDynamicPage = (url) => {
+  // @TODO: Passar por parâmetro seletor que o load deve aguardar
+  return new Promise(async function (resolve, reject) {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    await page.goto(url, { waitUntil: 'load', timeout: 0 });
+
+    await page.waitFor('.nome-cinema')
+
+    let html = await page.content()
+
+    browser.close();
+
+    let $ = cheerio.load(html)
+
+    resolve($);
+  });
+};
+
+module.exports = {
+  getStaticPage,
+  getDynamicPage
+};
