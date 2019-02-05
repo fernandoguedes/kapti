@@ -7,10 +7,13 @@
     "test": "mocha index.test.js --timeout=10000",
     "watch:test": "mocha index.test.js -w"
   },
-  "keywords": ["crawler", "simple", "dom"],
+  "keywords": [
+    "crawler",
+    "simple",
+    "dom"
+  ],
   "author": "Luís Fernando Guedes <lfernandoguedes@gmail.com>",
   "license": "GNU",
-  "main": "index.js",
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^4.19.0",
@@ -18,7 +21,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "jsdom": "^11.6.2",
+    "puppeteer": "^1.12.1",
     "request": "^2.85.0",
     "request-promise": "^4.2.2"
   },
