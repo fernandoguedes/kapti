@@ -8,7 +8,7 @@ describe('Crawler', () => {
 		expect(results).to.not.undefined;
   });
 
-  it.only('getDynamicPage: Should return a HTML object from dynamic page', async () => {
+  it('getDynamicPage: Should return a HTML object from dynamic page', async () => {
     const results = await kapti.getDynamicPage('https://www.cinesystem.com.br/cinemas/shopping-iguatemi-florianopolis/437', '#programacao_cinema > .row')
 
 		expect(results).to.not.undefined;
