@@ -22,15 +22,14 @@ const getStaticPage = (url) => {
 	});
 };
 
-const getDynamicPage = (url) => {
-  // @TODO: Passar por parâmetro seletor que o load deve aguardar
+const getDynamicPage = (url, waitSelector = null) => {
   return new Promise(async function (resolve, reject) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     await page.goto(url, { waitUntil: 'load', timeout: 0 });
 
-    await page.waitFor('.nome-cinema')
+    await page.waitFor(waitSelector)
 
     let html = await page.content()
 
