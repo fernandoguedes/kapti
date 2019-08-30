@@ -24,7 +24,11 @@ const getStaticPage = (url) => {
 
 const getDynamicPage = (url, waitSelector = null) => {
   return new Promise(async function (resolve, reject) {
-    const browser = await puppeteer.launch();
+    const puppeteerConfig = {
+      headless: true,
+      args: ['--no-sandbox']
+    }
+    const browser = await puppeteer.launch(puppeteerConfig);
     const page = await browser.newPage();
 
     await page.goto(url, { waitUntil: 'load', timeout: 0 });
